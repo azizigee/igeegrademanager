@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+*{
+margin: 0;
+font-family: Ubuntu;
+}
+.navbar{
+padding: 20px;
+display: flex;
+align-items: center;
+max-width: 800px;
+margin: 0 auto;
+}
+.navbar h1{
+  color: solid #f2f2f2;
+}
+
+.navbar .links{
+  margin-left: auto;
+  font-size: x-large; 
+}
+
+.navbar a{
+  text-decoration:none;
+  color: red;
+}
+.createStudent{
+max-width: 800px;
+margin: 0 auto;
+text-align: left;
+
+overflow: auto;
+min-height: 300px;
+border: 1px solid steelblue;
+padding: 30px;
+border-radius: 5px;
+}
+
+.createStudent label{
+  text-align: left;
+  display: block;
+margin-top: 5px;
+
+
+
+}
+.studentPreview{
+  padding: 5px 10px;
+  margin: 20 px 0;
+  border-bottom: 1px solid #fafafa;
+
+}
+
+
+
+ .student-list{
+  max-width: 500px;
+  margin: 60px auto;
+  overflow: auto;
+  min-height: 300px;
+  max-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+
+ }
+.homest{
+  
+ max-width: 500px;
+ margin: 30px auto;
+ overflow: auto;
+ min-height: 300px;
+ 
+ padding: 5px;
+ border-radius: 5px;}
+ .homest h1{
+ color: red;
+
+ }
