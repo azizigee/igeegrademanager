@@ -26,7 +26,7 @@ useEffect(()=>{},[render])
           
             {courses.map(course => (
                <div className="studentPreview" key= {course._id}>
-                   <h2>{course.level} {course.section} |{course.group} {course.name} </h2>
+                   <h2>level:{course.level} section:{course.section} group:{course.group} |{course.name} </h2>
                    
                    <button onClick={handeledelet  } value={course._id}>DELET</button>
                </div>

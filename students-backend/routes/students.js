@@ -44,4 +44,18 @@ router.post('/',(req, res,)=>{  //add new student----------------------------
       res.status(200).end()
     
         })
+
+        router.put('/getgrades/',(req, res,)=>{  //get grades of student----------------------------
+          
+     
+          Student.find(req.body,'level',function(err,data){
+           // console.log(`the requestt is `)
+            res.json(data)
+            res.status(200).end()
+           // console.log(data)
+        })
+        })
+
+
+
         module.exports = router

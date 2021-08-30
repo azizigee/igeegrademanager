@@ -34,12 +34,12 @@ const handeleSubmit = (e)=>{
                    onChange={(e)=>setLevel(e.target.value)}
                 />
                  <label >section</label>
-                <input type="text" required 
+                <input type="text"  
                    value= {section}
                    onChange={(e)=>setSection(e.target.value)}
                 />
                 <label >group</label>
-                <input type="text" required 
+                <input type="text"  
                    value= {group}
                    onChange={(e)=>setGroup(e.target.value)}
                 />

@@ -10,11 +10,23 @@ const studentSchema = new mongoose.Schema({
     level: {},
     section:{},
     group: {},
-    level1: {ee500c:{type: Number,default:0},ee500e:{type: Number,default:0},ee500a:{type: Number, default:0}}
+    grades1: {
+        EE100:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}},
+        EE101:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}},
+        EE102:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}}
+    },
+    grades2: {
+        EE200:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}},
+        EE201:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}},
+        EE202:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}}
+    },
+    grades3: {
+        EE300:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}},
+        EE301:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}},
+        EE302:{control:{type:Number, default:0},exam:{type:Number, default:0},makeup:{type:Number, default:0}}
+    }
 })
 
 
 const student = mongoose.model('student', studentSchema)
 module.exports= student
-
-

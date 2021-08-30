@@ -10,7 +10,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 console.log("mongoDB is connected")
-});
+});//--------------------------------------------------------------------------------------
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors({
@@ -29,6 +29,7 @@ app.use(logger);
 
 app.use('/students',require('./routes/students'))
 app.use('/teachers',require('./routes/teachers'))
+app.use('/grades',require('./routes/grades'))
     
 const PORT = process.env.port || 5000;
 

@@ -26,7 +26,7 @@ router.post('/',(req, res,)=>{  //add new teacher----------------------------
     
         })
 
-        router.get('/:id',(req, res,)=>{   //get only one students-----------------------
+        router.get('/:id',(req, res,)=>{   //get only one teacher-----------------------
           Teacher.find({_id:req.params.id},function(err,data){
             //  console.log(data[0])
               res.json(data[0])
