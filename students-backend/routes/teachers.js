@@ -17,7 +17,7 @@ router.post('/',(req, res,)=>{  //add new teacher----------------------------
   res.status(200).end()
 
     })
-
+ 
     router.delete('/:id',(req, res,)=>{  //delete teacher----------------------------
         Teacher.findByIdAndRemove(req.params.id,{useFindAndModify: false}, ()=>{res.status(200).end()} )
        // console.log(`the of the object is ${req.params.id}`)

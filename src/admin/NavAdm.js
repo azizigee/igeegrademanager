@@ -12,7 +12,8 @@ const NavAdm = () => {
             </Link>
             <div className= "links">
                 <Link to="/admin/students">Student</Link>
-                <Link to="/admin/teachers">Teachers</Link>
+                <Link to="/admin/teachers">|Teachers</Link>
+                <Link to="/admin/deliberation">|Deliberation</Link>
             </div>
       </nav>
 

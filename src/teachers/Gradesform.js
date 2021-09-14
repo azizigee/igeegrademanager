@@ -1,11 +1,13 @@
 import React from 'react'
 import {useState,useEffect} from "react"
 import Graderowcourse from './Graderowcourse'
+import Graderowlab from './Graderowlab'
 
 const Gradesform = ({course}) => {
     const [grades,setGrades] = useState(null)
   
-    useEffect(()=>{fetch('http://localhost:5000/grades' , {
+    useEffect(()=>{
+        fetch('http://localhost:5000/grades' , {
         method:'put',
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({course})
@@ -28,11 +30,20 @@ const Gradesform = ({course}) => {
 
     return (
         <div>
-           <h2>level: {course.level} group:{course.group} course: {course.name}</h2>
         
+           {(grades&& (course.coursecode.length!==6) ) && <div>
+               
+               <output style={{marginLeft: "440px", fontWeight: "bold"}} >Control</output>
+               <output style={{marginLeft: "55px", fontWeight: "bold"}}>Exam</output>
+               <output style={{marginLeft: "70px", fontWeight: "bold"}}>MakeUp</output>
+            {grades.map((grade,index)=>(<Graderowcourse key={index} grades={grades} setGrades={setGrades} index={index} course={course}  />))
+            
+            }
+             </div>}
 
-           {grades && <div>
-            {grades.map((grade,index)=>(<Graderowcourse grades={grades} setGrades={setGrades} index={index} course={course}  />))
+             {(grades&& (course.coursecode.length===6) ) && <div>
+             <output style={{marginLeft: "440px", fontWeight: "bold"}} >Grade</output>
+            {grades.map((grade,index)=>(<Graderowlab key={index} grades={grades} setGrades={setGrades} index={index} course={course}  />))
             
             }
              </div>}

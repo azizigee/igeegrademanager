@@ -6,6 +6,7 @@ const Grades = () => {
     const {id}= useParams()
     const [teacher, setTeacher] = useState(null)
     const [scourse, setScourse] = useState(null)
+
     //--------------------------------------------------
 
     useEffect(()=>{fetch('http://localhost:5000/teachers/'+id)
@@ -18,8 +19,11 @@ const Grades = () => {
     })
 },[])
 //-----------------------------------------------------------
-const handleChange =  (e)=>{setScourse(teacher.courses[e.target.value])
-                            console.log(teacher.courses[e.target.value])}
+// the the scourse is put the null for while (using setTimeout) to restart the graderowcourse or graderowlab 
+const handleChange =  (e)=>{setScourse(null)
+       setTimeout(()=>{setScourse(teacher.courses[e.target.value])
+        console.log(teacher.courses[e.target.value])},1)
+                            }
 
 
 
@@ -28,20 +32,20 @@ const handleChange =  (e)=>{setScourse(teacher.courses[e.target.value])
 
 
     return (
-        <div className = "App">
+        <div className = "Appp">
            {teacher && <div>
-               <h2> Wellcome   {teacher.fname} {teacher.lname} </h2>
+               <h1>   {teacher.fname} {teacher.lname} </h1>
            {(teacher.courses.length===0)&&<h2>there is no course assigned to you yet</h2>}
            {(teacher.courses.length!==0)&&<div><label>select a course</label>
             <select
-           valuee ={null}
+           valuee ={scourse}
            onChange={ handleChange  }
            >
                <option value={null}> </option>
 
                {teacher.courses.map((course,index)=> (
                   
-                <option value={index} key={course._id} >Level :{course.level} group:{course.group} Name:{course.name}</option>
+                <option value={index} key={course._id} >Level :{course.level} section:{course.section} group:{course.group} Name:{course.coursename}/{course.coursecode}</option>
                 
                ))}
            </select></div>}</div>}

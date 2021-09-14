@@ -47,7 +47,7 @@ const [render,setRender] =useState(false)
 
     return (
         <div className="createStudent" >
-            <h3>Editing Teacher details</h3>
+{/*             <h3>Editing Teacher details</h3>
             <form onSubmit = {handeleSubmit} >
                 
                 <label >First name</label>
@@ -73,7 +73,7 @@ const [render,setRender] =useState(false)
                 <button>SAVE</button>
   
 
-            </form>
+            </form> */}
 
              <Addcourse id={id} setRender={setRender} render={render}/>
             {(courses.length===0) && <h2>There is no courses assigned to this teacher</h2>}

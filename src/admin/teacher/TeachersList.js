@@ -26,7 +26,7 @@ useEffect(()=>{},[])
                    
                    <button onClick={handeledelet  } value={teacher._id}>DELET</button>
                    <Link to={`/admin/teachers/editteach/${teacher._id}`}>
-                   <button  >EDIT</button>
+                   <button  >Courses</button>
                    </Link>
 
 

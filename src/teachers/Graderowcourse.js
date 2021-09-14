@@ -2,47 +2,66 @@ import React from 'react'
 import {useState,useEffect} from "react"
 
 const Graderowcourse = ({grades,setGrades,index,course,grade}) => {
-    const [control,setControl]=useState(grades[index][`grades${course.level}`][`${course.name}`].control)
-    const [exam,setExam]=useState(grades[index][`grades${course.level}`][`${course.name}`].exam)
-    const [makeup,setMakeup]=useState(grades[index][`grades${course.level}`][`${course.name}`].makeup)
+    const [control,setControl]=useState(grades[index][`grades${course.level}`][`${course.coursecode}`].control)
+    const [exam,setExam]=useState(grades[index][`grades${course.level}`][`${course.coursecode}`].exam)
+    const [makeup,setMakeup]=useState(grades[index][`grades${course.level}`][`${course.coursecode}`].makeup)
     
-    const handleChange = async ()=>{
+/*     const handleChange = async ()=>{
         const tgrades = grades
+        await setGrades(tgrades)
   
         tgrades[index][`grades${course.level}`][`${course.name}`].control= control
         tgrades[index][`grades${course.level}`][`${course.name}`].exam=exam   
         tgrades[index][`grades${course.level}`][`${course.name}`].makeup=makeup 
                 
-               await setGrades(tgrades)
+               
                   console.log(tgrades)
-                   }
+                   } */
+//----------------------------------------------------------------------------------
+useEffect(()=>{
+    const tgrades = grades
+     
+
+    tgrades[index][`grades${course.level}`][`${course.coursecode}`].control= control
+    tgrades[index][`grades${course.level}`][`${course.coursecode}`].exam=exam   
+    tgrades[index][`grades${course.level}`][`${course.coursecode}`].makeup=makeup 
+            
+    setGrades(tgrades)
+              
+
+
+},[control,exam,makeup,course])
+
+
 
 
     return (
         <div className ="graderow">
-            <label  >{grades[index].rnumber} {grades[index].fname } {grades[index].lname }  </label>
-               
+            <output className="rnumber"   >{grades[index].rnumber}   </output>
+            <output className="fname"   > | {grades[index].fname }  </output>
+            <output className="lname"   >| {grades[index].lname }  </output>   
                 
-               <input type="number" required 
+               <input input className="gradefield" type="number" required 
                   value= {control}
-                  onChange={ (e)=>{setControl(e.target.value)
-                                    handleChange()}}
+                  onChange={ async (e)=>{setControl(e.target.value)
+                                   }}
                />
 
-               <input type="number" required 
+               <input className="gradefield" type="number" required 
                   value= {exam}
-                  onChange={ (e)=>{setExam(e.target.value)
-                                         handleChange()}}
+                  onChange={ async (e)=>{setExam(e.target.value)
+                                    }}
                />
 
-               <input type="number" required 
+               <input input className="gradefield" type="number" required 
                   value= {makeup}
-                  onChange={ (e)=>{setMakeup(e.target.value)
-                                 handleChange()}}
+                  onChange={ async (e)=>{setMakeup(e.target.value)
+                               }}
                />
-   
+               
 
         </div>
+        
     )
 }
 

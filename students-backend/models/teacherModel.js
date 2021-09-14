@@ -5,7 +5,9 @@ const coursesSchema = new mongoose.Schema({
     level: {},
     section: {},
     group: {},
-    name:{},
+    coursename:{},
+    coursecode:{},
+
 
 })
 
@@ -13,6 +15,7 @@ const teacherSchema = new mongoose.Schema({
 
     fname: {},
     lname: {},
+    email:{},
     password:{},
     courses: [coursesSchema]
 })
